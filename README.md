@@ -6,4 +6,4 @@ Just wanted to try to make a running clock with CSS only. Setting to the actual 
 
 Also touched RTK (Redux Toolkit) and it's quite nice
 
-![neon clock](https://pasteboard.co/Kc5Ye0k.png)
+![neon clock](https://github.com/stopster/neon-clock/raw/main/public/neon-clock.jpg)
