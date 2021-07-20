@@ -1,0 +1,89 @@
+.clockWrap {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: rgb(32, 32, 46);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+
+.stopped .hand{
+  animation-play-state: paused;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  border-radius: 8px;
+  transform-origin: 4px 4px;
+}
+
+.hand::before {
+  content: "";
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    inset: 0px;
+    filter: blur(5px);
+  background: linear-gradient(230deg, rgb(182, 80, 158) 0%, rgb(46, 186, 198) 100%);
+}
+
+.handSecond {
+  composes: hand;
+  height: 45%;
+  animation: rotation 60s steps(60) infinite;
+  width: 4px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background-color: rgba(80, 230, 75, 0.3);
+  transform-origin: 2px 2px;
+}
+.handMinute {
+  composes: hand;
+  height: 40%;
+  animation: rotation 3600s linear infinite;
+  width: 6px;
+  margin-left: -3px;
+  border-radius: 4px;
+  background-color: rgb(98, 43, 250);
+  transform-origin: 3px 3px;
+}
+.handHour {
+  composes: hand;
+  height: 30%;
+  margin-left: -6px;
+  animation: rotation calc(12*3600s) linear infinite;
+  background-color: #354535
+}
+
+.controlsWrap {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+}
+.controlsWrap button {
+  width: 130px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  background: linear-gradient(230deg, rgb(182, 80, 158) 0%, rgb(46, 186, 198) 100%);
+  color: white;
+  transition: all .2s ease-out;
+}
+
+
+.controlsWrap button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+@keyframes rotation {
+  to {
+    transform: rotate(1turn);
+  } 
+}
